@@ -9,6 +9,7 @@ import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
+//Changed ParallaxStyles to Height:50vh to shorten image
 import GalleryCards from "./Sections/GalleryCards.js";
 //import GalleryCard from "./Sections/GalleryCard.js";
 //import PaintingContainer from "./Sections/PaintingContainer";

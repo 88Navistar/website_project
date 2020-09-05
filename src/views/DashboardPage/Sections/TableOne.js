@@ -17,7 +17,7 @@ import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 
-import product1 from "assets/img/product1.jpg";
+//import product1 from "assets/img/product1.jpg";
 import product2 from "assets/img/product2.jpg";
 import product3 from "assets/img/product3.jpg";
 
@@ -46,7 +46,7 @@ export default function TableOne() {
                 tableData={[
                   [
                     <div className={classes.imgContainer} key={1}>
-                      <img src={product1} alt="..." className={classes.img} />
+                      <img src={require("assets/photos/dma-1.jpg")} alt="..." className={classes.img} />
                     </div>,
                     <span key={1}>
                       <a href="#jacket" className={classes.tdNameAnchor}>
