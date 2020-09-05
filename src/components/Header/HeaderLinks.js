@@ -63,14 +63,28 @@ export default function HeaderLinks(props) {
   const { dropdownHoverColor } = props;
   const classes = useStyles();
   return (
+    <>
+    <List className={classes.list + " " + classes.mrAuto}>
+      <ListItem className={classes.listItem}>
+                  <Button
+                    href="/landing-page"
+                    className={classes.navLink + " " + classes.navLinkActive}
+                    color="transparent"
+                  >
+                    Home
+                  </Button>
+                </ListItem>
+                <ListItem className={classes.listItem}>
+                  <Button
+                    href="/gallery-page"
+                    className={classes.navLink}
+                    color="transparent"
+                  >
+                    Gallery
+                  </Button>
+                </ListItem>
+    </List>
     <List className={classes.list + " " + classes.mlAuto}>
-      <ListItem >
-      <a href="/landing-page">Home</a>
-      </ListItem>
-      <ListItem >
-      <a href="/gallery-page">Gallery</a>
-      </ListItem>
-      
       <ListItem className={classes.listItem}>
         <Button
           href=""
@@ -82,7 +96,8 @@ export default function HeaderLinks(props) {
           <ShoppingCart className={classes.icons} /> Cart
         </Button>
       </ListItem>
-    </List>
+      </List>
+    </>
   );
 }
 

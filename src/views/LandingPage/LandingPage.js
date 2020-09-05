@@ -64,11 +64,10 @@ export default function LandingPage({ ...rest }) {
               <Button
                 color="danger"
                 size="lg"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
+                href=""
                 target="_blank"
               >
-                <i className="fas fa-play" />
-                Watch video
+                Go Somewhere
               </Button>
             </GridItem>
           </GridContainer>

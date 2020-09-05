@@ -66,9 +66,6 @@ export default function Header(props) {
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
-        <Button className={classes.title}>
-          <Link to="/landing-page">{brand}</Link>
-        </Button>
         <Hidden smDown implementation="css" className={classes.hidden}>
           <div className={classes.collapse}>{links}</div>
         </Hidden>
@@ -88,7 +85,7 @@ export default function Header(props) {
           anchor={"right"}
           open={mobileOpen}
           classes={{
-            paper: classes.drawerPaper
+            paper: classes.drawerPaper,
           }}
           onClose={handleDrawerToggle}
         >

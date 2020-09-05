@@ -147,15 +147,6 @@ export default function TableList() {
                   659,
                   "Painting",
                 ],
-                [
-                  "6",
-                  "Painting6",
-                  "Description",
-                  "https://raw.githubusercontent.com/88Navistar/final-project/master/public/photos/dma-6.jpg?token=APIFOS3PECYPXPDNDO4V5BS7LKL66",
-                  2019,
-                  659,
-                  "Painting",
-                ],
               ]}
             />
           </CardBody>

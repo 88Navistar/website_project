@@ -1,0 +1,95 @@
+import MaterialTable from "material-table";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
+export default function ReportTable() {
+  const [entries, setEntries] = useState({
+    data: [
+      {
+        id: "",
+        name: "",
+        thumbnail_url: "",
+        year: "",
+        price:"",
+        category:"",
+      },
+    ],
+  });
+
+  const [state] = React.useState({
+    columns: [
+      { title: "Id", field: "id"},
+      { title: "Name", field: "name" },
+      { title: "Description", field: "description" },
+      { title: "Link", field: "thumbnail_url" },
+      { title: "Year", field: "year" },
+      { title: "Price", field: "price" },
+      { title: "Category", field: "category" },
+    ],
+  });
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8001/api/paintings")
+      .then((response) => {
+        let data = [];
+        Object.values(response.data).forEach((el) => {
+          data.push({
+            id: el.id,
+            name: el.name,
+            description: el.description,
+            thumbnail_url: el.thumbnail_url,
+            year: el.year,
+            price: el.price,
+            category: el.category,
+          });
+        });
+        setEntries({ data: data });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
+  return (
+    <MaterialTable
+      title="Report Table"
+      columns={state.columns}
+      data={entries.data}
+      editable={{
+        onRowUpdate: (newData, oldData) =>
+          new Promise((resolve) => {
+            setTimeout(() => {
+              resolve();
+              const data = [...entries.data];
+              data[data.indexOf(oldData)] = newData;
+              axios
+                .put("http://localhost:8001/api/paintings", newData, {
+                  params: {
+                    id: entries.data[0].id,
+                  },
+                })
+                .then((res) => console.log(res.data));
+              setEntries({ ...entries, data });
+            }, 600);
+          }),
+        onRowDelete: (oldData) =>
+          new Promise((resolve) => {
+            setTimeout(() => {
+              resolve();
+              const data = [...entries.data];
+              data.splice(data.indexOf(oldData), 1);
+              axios
+                .delete("http://localhost:8001/api/paintings", {
+                  params: {
+                    id: entries.data[0].id,
+                  },
+                })
+                .then((res) => console.log(res.data));
+              setEntries({ ...entries, data });
+            }, 600);
+          }),
+      }}
+    />
+  );
+}
