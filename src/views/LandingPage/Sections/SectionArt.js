@@ -9,7 +9,7 @@ export default function SectionArt() {
   const classes = useStyles();
   return (
     <div className={classes.section}>
-      <h2 className={classes.title}>Commissioned Art</h2>
+      <h1 className={classes.title}>Commissioned Art</h1>
     </div>
   )
 }

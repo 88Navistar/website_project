@@ -8,8 +8,11 @@ const useStyles = makeStyles(productStyle);
 export default function SectionBio() {
   const classes = useStyles();
   return (
-    <div className={classes.section}>
-      <h2 className={classes.title}>Artist Bio</h2>
+    <div
+      className={classes.section}
+      style={{ backgroundColor: "lightgrey" }}
+    >
+      <h1 className={classes.title}>Artist Bio</h1>
     </div>
   )
 }

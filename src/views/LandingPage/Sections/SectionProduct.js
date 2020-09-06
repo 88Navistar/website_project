@@ -18,7 +18,7 @@ const useStyles = makeStyles(productStyle);
 export default function SectionProduct() {
   const classes = useStyles();
   return (
-    <div className={classes.section}>
+    <div className={classes.section} style={{ backgroundColor: "lightgray" }}>
       <GridContainer justify="center">
         <GridItem xs={12} sm={8} md={8}>
           <h2 className={classes.title}>Let{"'"}s talk product</h2>

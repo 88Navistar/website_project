@@ -74,7 +74,7 @@ export default function LandingPage({ ...rest }) {
         </div>
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.container}>
+       <div >   {/* className={classes.container} */}
         <SectionBio />
         <SimpleReactLightbox>
           <SectionGrid />

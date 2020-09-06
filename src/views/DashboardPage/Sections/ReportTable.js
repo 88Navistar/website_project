@@ -6,6 +6,7 @@ export default function ReportTable() {
   const [entries, setEntries] = useState({
     data: [
       {
+        id: "",
         name: "",
         thumbnail_url: "",
         year: "",
@@ -33,6 +34,7 @@ export default function ReportTable() {
         let data = [];
         Object.values(response.data).forEach((el) => {
           data.push({
+            id: el.id,
             name: el.name,
             description: el.description,
             thumbnail_url: el.thumbnail_url,
@@ -50,7 +52,7 @@ export default function ReportTable() {
 
   return (
     <>
-      <div style={{ maxWidth: "95%" }}>
+      <div style={{ maxWidth: "100%", padding: "20px" }}>
         <MaterialTable
           title="Available Paintings"
           columns={state.columns}

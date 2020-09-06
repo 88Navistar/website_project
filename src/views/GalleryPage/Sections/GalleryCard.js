@@ -12,8 +12,8 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import Button from "components/CustomButtons/Button.js";
-import GridItem from "components/Grid/GridItem";
-import GridContainer from "components/Grid/GridContainer";
+//import GridItem from "components/Grid/GridItem";
+//import GridContainer from "components/Grid/GridContainer";
 //import PropTypes from "prop-types";
 
 const style = {
@@ -39,48 +39,41 @@ export default function GalleryCard(props) {
             alt="Card-img-cap"
           />
           <CardBody>
-            <h4 className={classes.cardTitle}>Eagle</h4>
-            <p>Keeping Watch</p>
+            <p>{props.description}</p>
+          </CardBody>
+          <CardFooter plain style={{justifyContent: "space-around" }}>
+            <h3 className={classes.cardTitle}>{props.name} </h3>
+
             <p>
               <small className={classes.textMuted}>Acrylic on Canvas</small>
             </p>
-          </CardBody>
-          <CardFooter plain>
-            <GridContainer>
-              <GridItem lg={6} sm={12}>
-                <div className={classes.priceContainer}>
-                  <span className={classNames(classes.price)}>
-                   ${props.price}
-                  </span>
-                </div>
-              </GridItem>
-              <GridItem lg={6} sm={12}>
-                <div className={classNames(classes.stats, classes.mlAuto)}>
-                  <Tooltip
-                    id="tooltip-top"
-                    title="Saved to Wishlist"
-                    classes={{ tooltip: classes.tooltip }}
-                  >
-                    <Button justIcon simple color="rose">
-                      <Favorite />
-                    </Button>
-                  </Tooltip>
-                </div>
-              </GridItem>
-              <GridItem>
-                <Button
-                  round
-                  color="info"
-                  onClick={() =>
-                    // window.dispatchEvent("addItemToCart", props.item)
-                    // eslint-disable-next-line react/prop-types
-                    console.log(props.id, props.thumbnail_url)
-                  }
-                >
-                  Add to Cart &nbsp;
+            <div className={classes.priceContainer}>
+              <span className={classNames(classes.price)}>${props.price}</span>
+            </div>
+
+            <div className={classNames(classes.stats, classes.mlAuto)}>
+              <Tooltip
+                id="tooltip-top"
+                title="Saved to Wishlist"
+                classes={{ tooltip: classes.tooltip }}
+              >
+                <Button justIcon simple color="rose">
+                  <Favorite />
                 </Button>
-              </GridItem>
-            </GridContainer>
+              </Tooltip>
+            </div>
+
+            <Button
+              round
+              color="info"
+              onClick={() =>
+                // window.dispatchEvent("addItemToCart", props.item)
+                // eslint-disable-next-line react/prop-types
+                console.log(props.id, props.thumbnail_url)
+              }
+            >
+              Add to Cart &nbsp;
+            </Button>
           </CardFooter>
         </Card>
       </div>

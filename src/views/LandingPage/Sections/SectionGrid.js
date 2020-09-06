@@ -11,8 +11,8 @@ export default function SectionGrid() {
   const classes = useStyles();
   return (
     <div className={classes.section}>
-      <h2 className={classes.title}>Feature Gallery</h2>
-      <GridContainer justify="center" sm={12}>
+      <h1 className={classes.title}>Feature Gallery</h1>
+      <GridContainer style={{ justifyContent: "certer" }} sm={12}>
         <SRLWrapper>
           <div className="row">
             <div className="column">

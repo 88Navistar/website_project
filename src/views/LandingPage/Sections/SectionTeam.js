@@ -34,7 +34,7 @@ const useStyles = makeStyles(style);
 export default function SectionTeam() {
   const classes = useStyles();
   return (
-    <div className={classes.section}>
+    <div className={classes.section} style={{ backgroundColor: "darkgray" }}>
       <h2 className={classes.title}>Here is our team</h2>
       <div>
         <GridContainer>

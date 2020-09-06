@@ -4,7 +4,7 @@ const cardFooterStyle = {
     alignItems: "center",
     backgroundColor: "transparent",
     padding: "0.9375rem 1.875rem",
-    paddingTop: "0"
+    paddingTop: "0",
   },
   cardFooterProfile: {
     marginTop: "-15px"
