@@ -6,19 +6,17 @@ export default function ReportTable() {
   const [entries, setEntries] = useState({
     data: [
       {
-        id: "",
         name: "",
         thumbnail_url: "",
         year: "",
-        price:"",
-        category:"",
+        price: "",
+        category: "",
       },
     ],
   });
 
   const [state] = React.useState({
     columns: [
-      { title: "Id", field: "id"},
       { title: "Name", field: "name" },
       { title: "Description", field: "description" },
       { title: "Link", field: "thumbnail_url" },
@@ -35,7 +33,6 @@ export default function ReportTable() {
         let data = [];
         Object.values(response.data).forEach((el) => {
           data.push({
-            id: el.id,
             name: el.name,
             description: el.description,
             thumbnail_url: el.thumbnail_url,
@@ -52,44 +49,50 @@ export default function ReportTable() {
   }, []);
 
   return (
-    <MaterialTable
-      title="Report Table"
-      columns={state.columns}
-      data={entries.data}
-      editable={{
-        onRowUpdate: (newData, oldData) =>
-          new Promise((resolve) => {
-            setTimeout(() => {
-              resolve();
-              const data = [...entries.data];
-              data[data.indexOf(oldData)] = newData;
-              axios
-                .put("http://localhost:8001/api/paintings", newData, {
-                  params: {
-                    id: entries.data[0].id,
-                  },
-                })
-                .then((res) => console.log(res.data));
-              setEntries({ ...entries, data });
-            }, 600);
-          }),
-        onRowDelete: (oldData) =>
-          new Promise((resolve) => {
-            setTimeout(() => {
-              resolve();
-              const data = [...entries.data];
-              data.splice(data.indexOf(oldData), 1);
-              axios
-                .delete("http://localhost:8001/api/paintings", {
-                  params: {
-                    id: entries.data[0].id,
-                  },
-                })
-                .then((res) => console.log(res.data));
-              setEntries({ ...entries, data });
-            }, 600);
-          }),
-      }}
-    />
+    <>
+      <div style={{ maxWidth: "95%" }}>
+        <MaterialTable
+          title="Available Paintings"
+          columns={state.columns}
+          data={entries.data}
+          editable={{
+            onRowUpdate: (newData, oldData) =>
+              new Promise((resolve) => {
+                setTimeout(() => {
+                  resolve();
+                  const data = [...entries.data];
+                  //console.log("post", data)
+                  data[data.indexOf(oldData)] = newData;
+                  console.log("newData", newData);
+                  axios
+                    .put("http://localhost:8001/api/paintings", newData, {
+                      params: {
+                        id: entries.data[0].id,
+                      },
+                    })
+                    .then((res) => console.log(res.data));
+                  setEntries({ ...entries, data });
+                }, 600);
+              }),
+            onRowDelete: (oldData) =>
+              new Promise((resolve) => {
+                setTimeout(() => {
+                  resolve();
+                  const data = [...entries.data];
+                  data.splice(data.indexOf(oldData), 1);
+                  axios
+                    .delete("http://localhost:8001/api/paintings", {
+                      params: {
+                        id: entries.data[0].id,
+                      },
+                    })
+                    .then((res) => console.log(res.data));
+                  setEntries({ ...entries, data });
+                }, 600);
+              }),
+          }}
+        />
+      </div>
+    </>
   );
 }

@@ -1,10 +1,15 @@
 import React from "react";
 import MaterialTable from "material-table";
+import { makeStyles } from "@material-ui/core/styles";
+import styles from "assets/jss/material-kit-pro-react/components/tableStyle.js";
+
+const useStyles = makeStyles(styles);
 
 export default function MatTable() {
+  const classes = useStyles();
   return (
     <>
-      <div style={{ maxWidth: "100%" }}>
+      <div className={classes.tableResponsive}>
         <MaterialTable
           columns={[
             { title: "Adı", field: "name" },
