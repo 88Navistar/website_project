@@ -30,15 +30,8 @@ export default function SectionBio() {
       <div className={classes.section}>
         <h1 className={classes.title}>Artist Profile</h1>
         <div>
-          <GridContainer
-            section
-            spacing={0}
-            direction="column"
-            alignItems="center"
-            justify="center"
-        
-          >
-            <GridItem>
+          <GridContainer>
+            <GridItem xs={12} sm={6}>
               <Card>
                 <img
                   style={{ height: "100%", width: "100%", display: "block" }}
@@ -46,18 +39,24 @@ export default function SectionBio() {
                   src={daveProfileWtDog1}
                   alt="Card-img-cap"
                 />
-                <CardBody>
-                  <h4 className={classes.cardTitle}>David and Ali</h4>
-                  <p>
-                    David and his 5 year old German Shepard need the Ram River
-                  </p>
-                  <Button color="simple" 
-                  href="/profile-page">Full Profile</Button>
-                </CardBody>
+                <h4 className={classes.cardTitle}>David and Ally</h4>
               </Card>
             </GridItem>
+            <GridItem xs={12} sm={6}>
+              <Card>
+                
+                <p>
+                  David and his 5 year old German Shepard need the Ram River
+                </p>
+              </Card>
+            </GridItem>
+
+            
           </GridContainer>
         </div>
+        <Button color="simple" href="/profile-page">
+              Full Profile
+            </Button>
       </div>
     </>
   );

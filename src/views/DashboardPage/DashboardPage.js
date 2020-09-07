@@ -1,5 +1,5 @@
 import React from "react";
-import TableOne from "views/DashboardPage/Sections/TableOne.js";
+//import TableOne from "views/DashboardPage/Sections/TableOne.js";
 import PersistentDrawerLeft from "components/SideBar/PersistentDrawerLeft";
 import TableList from "views/TableList/TableList";
 //import MaterialTable from "views/DashboardPage/Sections/MaterialTable.js";
@@ -13,7 +13,6 @@ export default function DashboardPage() {
         <PersistentDrawerLeft />
         <ReportTable />
         <TableList />
-        <TableOne />
       </div>
     </>
   );
