@@ -66,23 +66,32 @@ export default function HeaderLinks(props) {
     <>
     <List className={classes.list + " " + classes.mrAuto}>
       <ListItem className={classes.listItem}>
-                  <Button
-                    href="/landing-page"
-                    className={classes.navLink + " " + classes.navLinkActive}
-                    color="transparent"
-                  >
-                    Home
-                  </Button>
-                </ListItem>
-                <ListItem className={classes.listItem}>
-                  <Button
-                    href="/gallery-page"
-                    className={classes.navLink}
-                    color="transparent"
-                  >
-                    Gallery
-                  </Button>
-                </ListItem>
+        <Button
+          href="/landing-page"
+          className={classes.navLink + " " + classes.navLinkActive}
+          color="info"
+        >
+          Home
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button
+          href="/gallery-page"
+          className={classes.navLink + " " + classes.navLinkActive}
+          color="info"
+        >
+          Gallery
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button
+          href="/profile-page"
+          className={classes.navLink + " " + classes.navLinkActive}
+          color="info"
+        >
+          Profile
+        </Button>
+      </ListItem>
     </List>
     <List className={classes.list + " " + classes.mlAuto}>
       <ListItem className={classes.listItem}>
@@ -94,6 +103,15 @@ export default function HeaderLinks(props) {
           round
         >
           <ShoppingCart className={classes.icons} /> Cart
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button
+          href="/dashboard-page"
+          className={classes.navLink + " " + classes.navLinkActive}
+          color="info"
+        >
+          Admin
         </Button>
       </ListItem>
       </List>

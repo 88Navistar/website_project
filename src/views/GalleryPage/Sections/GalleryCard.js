@@ -41,7 +41,7 @@ export default function GalleryCard(props) {
           <CardBody>
             <p>{props.description}</p>
           </CardBody>
-          <CardFooter plain style={{justifyContent: "space-around" }}>
+          <CardFooter plain style={{ justifyContent: "space-around" }}>
             <h3 className={classes.cardTitle}>{props.name} </h3>
 
             <p>

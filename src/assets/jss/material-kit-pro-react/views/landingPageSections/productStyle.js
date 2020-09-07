@@ -2,7 +2,7 @@ import { title, grayColor } from "assets/jss/material-kit-pro-react.js";
 
 const productStyle = {
   section: {
-    padding: "70px 0",
+    padding: "70px 10px",
     textAlign: "center",
   },
   title: {

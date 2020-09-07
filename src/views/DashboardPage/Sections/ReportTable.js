@@ -67,7 +67,7 @@ export default function ReportTable() {
                   data[data.indexOf(oldData)] = newData;
                   console.log("newData", newData);
                   axios
-                    .put("http://localhost:8001/api/paintings", newData, {
+                    .put("http://localhost:8001/api/paintings/", newData, {
                       params: {
                         id: entries.data[0].id,
                       },

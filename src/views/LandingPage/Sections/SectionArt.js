@@ -2,8 +2,16 @@ import React from 'react'
 import productStyle from "assets/jss/material-kit-pro-react/views/landingPageSections/productStyle.js";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(productStyle);
+const style = {
+  ...productStyle,
+  section: {
+    padding: "70px 30px",
+    textAlign: "center",
+    backgroundColor: "ghostwhite",
+  },
+};
 
+const useStyles = makeStyles(style);
 
 export default function SectionArt() {
   const classes = useStyles();

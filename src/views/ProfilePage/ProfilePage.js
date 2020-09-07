@@ -29,7 +29,7 @@ import Parallax from "components/Parallax/Parallax.js";
 import Clearfix from "components/Clearfix/Clearfix.js";
 import Button from "components/CustomButtons/Button.js";
 
-import christian from "assets/img/faces/christian.jpg";
+import dave from "assets/img/faces/dave.jpg";
 import oluEletu from "assets/img/examples/olu-eletu.jpg";
 import clemOnojeghuo from "assets/img/examples/clem-onojeghuo.jpg";
 import cynthiaDelRio from "assets/img/examples/cynthia-del-rio.jpg";
@@ -42,6 +42,7 @@ import kendall from "assets/img/faces/kendall.jpg";
 import cardProfile2Square from "assets/img/faces/card-profile2-square.jpg";
 
 import profilePageStyle from "assets/jss/material-kit-pro-react/views/profilePageStyle.js";
+import Quote from "components/Typography/Quote";
 
 const useStyles = makeStyles(profilePageStyle);
 
@@ -71,7 +72,7 @@ export default function ProfilePage({ ...rest }) {
         {...rest}
       />
       <Parallax
-        image={require("assets/img/examples/city.jpg")}
+        image={require("assets/photos/dma-2.jpg")}
         filter="dark"
         className={classes.parallax}
       />
@@ -81,24 +82,28 @@ export default function ProfilePage({ ...rest }) {
             <GridItem xs={12} sm={12} md={6}>
               <div className={classes.profile}>
                 <div>
-                  <img src={christian} alt="..." className={imageClasses} />
+                  <img src={dave} alt="..." className={imageClasses} />
                 </div>
                 <div className={classes.name}>
-                  <h3 className={classes.title}>Christian Louboutin</h3>
-                  <h6>DESIGNER</h6>
+                  <h3 className={classes.title}>David Massey</h3>
+                  <h6>ARTIST</h6>
                   <Button
                     justIcon
                     simple
                     color="dribbble"
                     className={classes.margin5}
+                    href="https://www.instagram.com/davidmassey24/"
+                    target="_blank"
                   >
-                    <i className={classes.socials + " fab fa-dribbble"} />
+                    <i className={classes.socials + " fab fa-instagram"} />
                   </Button>
                   <Button
                     justIcon
                     simple
                     color="twitter"
                     className={classes.margin5}
+                    href="https://twitter.com/DavidLMass67"
+                    target="_blank"
                   >
                     <i className={classes.socials + " fab fa-twitter"} />
                   </Button>
@@ -108,35 +113,24 @@ export default function ProfilePage({ ...rest }) {
                     color="pinterest"
                     className={classes.margin5}
                   >
-                    <i className={classes.socials + " fab fa-pinterest"} />
+                    <i className={classes.socials + " fab fa-facebook"} />
                   </Button>
                 </div>
-              </div>
-              <div className={classes.follow}>
-                <Tooltip
-                  id="tooltip-top"
-                  title="Follow this user"
-                  placement="top"
-                  classes={{ tooltip: classes.tooltip }}
-                >
-                  <Button
-                    justIcon
-                    round
-                    color="primary"
-                    className={classes.followButton}
-                  >
-                    <Add className={classes.followIcon} />
-                  </Button>
-                </Tooltip>
+             
               </div>
             </GridItem>
           </GridContainer>
-          <div className={classNames(classes.description, classes.textCenter)}>
+          <div className={classNames(classes.description, classes.textLeft)}>
+            <Quote 
+              text="If a piece of art can speak to your senses, take you to another moment in time, that is special"
+              author=" David Massey - Canadian Landscape Artist"
+            />
             <p>
-              An artist of considerable range, Chet Faker — the name taken by
-              Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
-              and records all of his own music, giving it a warm, intimate feel
-              with a solid groove structure.{" "}
+            Thank you for checking out my art.  My name is David Massey. I'm a traditional landscape artist and I currently live in Red Deer, Alberta, Canada. I love everything about nature, from prairies to mountains, animals and birds. I have a passion for the outdoors; the feeling it gives to be away in a quiet spot.  Art is a way I can express that, sharing those moments and feelings with you.  
+If you are interested in knowing a little more about me then feel free to keep reading. Otherwise thanks again and if you have any questions please send me a message! <br/>
+I was born in Saskatchewan and lived on a grain farm in my early years.  This gave me an inherited love for the prairie; old barnes, big skies and endless fields of swaying grain swaying.   Growing up in Alberta, with it’s bountiful landscapes instilled an appreciation for the mountains, rivers and abundance of amazing wildlife. I've always loved to draw.  One day I picked up a paint brush and that has led me here.
+Exploring the rural areas of this country is something I'll always love. We have so many wonderful communities with extraordinary amounts of scenic countryside where the wildlife thrives. From the prairies, to the west country, to the shores of Vancouver Island, I've found beauty throughout and most often times where I least expected it. Sharing these times with my close friends and family has created memories that will last my lifetime. It's these memories that inspire me to create. Life itself is beautiful. I feel my art reflects my prairie roots, love of the mountains and longing for the west coast. The beauty of Canada’s landscapes and nature drive me to create pieces that reflect  the incredible diversity and loveliness of our amazing country.  I want my art to reflect that inspiration and connect with those who share that similar love. I want my painting to speak to your senses and take you to a moment in time.
+{" "}
             </p>
           </div>
           <div className={classes.profileTabs}>
