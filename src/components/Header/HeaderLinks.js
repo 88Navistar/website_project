@@ -106,7 +106,7 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Button
           href=""
-          color={window.innerWidth < 960 ? "info" : "white"}
+          color={window.innerWidth < 960 ? "info" : "transparent"}
           target="_blank"
           className={classes.navButton}
           round

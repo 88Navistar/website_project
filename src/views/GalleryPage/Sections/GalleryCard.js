@@ -12,9 +12,6 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import Button from "components/CustomButtons/Button.js";
-//import GridItem from "components/Grid/GridItem";
-//import GridContainer from "components/Grid/GridContainer";
-//import PropTypes from "prop-types";
 
 const style = {
   ...imagesStyles,
@@ -39,16 +36,15 @@ export default function GalleryCard(props) {
             alt="Card-img-cap"
           />
           <CardBody>
-            <p>{props.description}</p>
+            <h2 className={classes.cardTitle}>{props.name} </h2>
           </CardBody>
           <CardFooter plain style={{ justifyContent: "space-around" }}>
-            <h3 className={classes.cardTitle}>{props.name} </h3>
-
+            <h4>{props.description}</h4>
             <p>
-              <small className={classes.textMuted}>Acrylic on Canvas</small>
+              <medium className={classes.textMuted}>Fine Art</medium>
             </p>
             <div className={classes.priceContainer}>
-              <span className={classNames(classes.price)}>${props.price}</span>
+              <span className={classes.cardTitle}>${props.price}</span>
             </div>
 
             <div className={classNames(classes.stats, classes.mlAuto)}>
