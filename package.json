@@ -8,6 +8,7 @@
     "animate.css": "4.1.0",
     "axios": "^0.20.0",
     "classnames": "2.2.6",
+    "gulp": "^4.0.2",
     "history": "4.10.1",
     "material-table": "^1.69.0",
     "moment": "2.26.0",
