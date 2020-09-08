@@ -1,6 +1,7 @@
 import {
   container,
   title,
+  featureTitle,
   main,
   whiteColor,
   mainRaised
@@ -11,6 +12,15 @@ const landingPageStyle = {
     color: whiteColor,
     ...container,
     zIndex: "2",
+  },
+  featureTitle: {
+    ...featureTitle,
+    display: "inline-block",
+    position: "relative",
+    marginTop: "30px",
+    minHeight: "32px",
+    color: whiteColor,
+    textDecoration: "none"
   },
   title: {
     ...title,

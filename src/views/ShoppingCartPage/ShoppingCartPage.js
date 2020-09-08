@@ -33,7 +33,7 @@ import product3 from "assets/img/product3.jpg";
 
 const useStyles = makeStyles(shoppingCartStyle);
 
-export default function ShoppingCartPage() {
+export default function ShoppingCartPage(props) {
   React.useEffect(() => {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
@@ -42,7 +42,6 @@ export default function ShoppingCartPage() {
   return (
     <div>
       <Header
-        brand="Material Kit PRO React"
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
         color="transparent"
@@ -52,10 +51,11 @@ export default function ShoppingCartPage() {
         }}
       />
 
-      <Parallax
-        image={require("assets/img/examples/bg2.jpg")}
+<Parallax
+        image={require("assets/photos/dma-2.jpg")}
         filter="dark"
-        small
+        className={classes.parallax}
+        height="300px"
       >
         <div className={classes.container}>
           <GridContainer>
@@ -68,7 +68,6 @@ export default function ShoppingCartPage() {
                 classes.textCenter
               )}
             >
-              <h2 className={classes.title}>Shopping Page</h2>
             </GridItem>
           </GridContainer>
         </div>
@@ -261,8 +260,12 @@ export default function ShoppingCartPage() {
                     col: {
                       colspan: 3,
                       text: (
-                        <Button color="info" round>
+                        <Button color="info" round 
+                        onClick={() =>
+                          console.log(props.id, props.thumbnail_url, props.price)
+                        }>
                           Complete Purchase <KeyboardArrowRight />
+                          
                         </Button>
                       )
                     }
@@ -292,63 +295,7 @@ export default function ShoppingCartPage() {
           </Card>
         </div>
       </div>
-      <Footer
-        content={
-          <div>
-            <div className={classes.left}>
-              <List className={classes.list}>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/?ref=mkpr-shopping-cart"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Creative Tim
-                  </a>
-                </ListItem>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/presentation?ref=mkpr-shopping-cart"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    About us
-                  </a>
-                </ListItem>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://blog.creative-tim.com/?ref=mkpr-shopping-cart"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Blog
-                  </a>
-                </ListItem>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/license?ref=mkpr-shopping-cart"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Licenses
-                  </a>
-                </ListItem>
-              </List>
-            </div>
-            <div className={classes.right}>
-              &copy; {1900 + new Date().getYear()} , made with{" "}
-              <Favorite className={classes.icon} /> by{" "}
-              <a
-                href="https://www.creative-tim.com?ref=mkpr-shopping-cart"
-                target="_blank"
-              >
-                Creative Tim
-              </a>{" "}
-              for a better web.
-            </div>
-          </div>
-        }
-      />
+
     </div>
   );
 }

@@ -92,6 +92,15 @@ export default function HeaderLinks(props) {
           Profile
         </Button>
       </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button
+          href="/commission-page"
+          className={classes.navLink + " " + classes.navLinkActive}
+          color="info"
+        >
+          Commission
+        </Button>
+      </ListItem>
     </List>
     <List className={classes.list + " " + classes.mlAuto}>
       <ListItem className={classes.listItem}>

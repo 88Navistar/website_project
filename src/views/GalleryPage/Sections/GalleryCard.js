@@ -69,7 +69,7 @@ export default function GalleryCard(props) {
               onClick={() =>
                 // window.dispatchEvent("addItemToCart", props.item)
                 // eslint-disable-next-line react/prop-types
-                console.log(props.id, props.thumbnail_url)
+                console.log(props.id, props.thumbnail_url, props.price)
               }
             >
               Add to Cart &nbsp;

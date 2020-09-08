@@ -1,7 +1,6 @@
 import React from "react";
 
 import classNames from "classnames";
-
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
@@ -46,8 +45,8 @@ export default function GalleryIndex({ ...rest }) {
               <h1 className={classes.title}>David L Massey Art</h1>
               <h4>Canadian Landscapes</h4>
               <br />
-              <Button color="danger" size="lg">
-                Where To?
+              <Button color="danger" size="lg" href="/commission-page">
+                Commissioned Art
               </Button>
             </GridItem>
           </GridContainer>
@@ -56,11 +55,9 @@ export default function GalleryIndex({ ...rest }) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           {" "}
-          {/* Centers cards in container.Take out for less padding */}
           <div>
             <GalleryCards />
           </div>
-          {/* <PaintingContainer /> */}
         </div>
       </div>
       <Footer></Footer>

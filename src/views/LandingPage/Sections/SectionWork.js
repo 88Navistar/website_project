@@ -20,12 +20,9 @@ export default function SectionWork() {
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem cs={12} sm={8} md={8}>
-          <h2 className={classes.title}>Work with us</h2>
+          <h2 className={classes.title}>Contact David</h2>
           <h4 className={classes.description}>
-            Divide details about your product or agency work into parts. Write a
-            few lines about each one and contact us about any further
-            collaboration. We will responde get back to you in a couple of
-            hours.
+            Please use the contact form for any questions or comments.
           </h4>
           <form>
             <GridContainer>
@@ -34,7 +31,7 @@ export default function SectionWork() {
                   labelText="Your Name"
                   id="name"
                   formControlProps={{
-                    fullWidth: true
+                    fullWidth: true,
                   }}
                 />
               </GridItem>
@@ -43,7 +40,7 @@ export default function SectionWork() {
                   labelText="Your Email"
                   id="email"
                   formControlProps={{
-                    fullWidth: true
+                    fullWidth: true,
                   }}
                 />
               </GridItem>
@@ -52,20 +49,19 @@ export default function SectionWork() {
                 id="message"
                 formControlProps={{
                   fullWidth: true,
-                  className: classes.textArea
+                  className: classes.textArea,
                 }}
                 inputProps={{
                   multiline: true,
-                  rows: 5
+                  rows: 5,
                 }}
               />
               <GridItem
                 xs={12}
-                sm={4}
-                md={4}
                 className={classes.mrAuto + " " + classes.mlAuto}
+                style={{ textAlign: "center" }}
               >
-                <Button color="primary">Send Message</Button>
+                <Button color="tumblr">Send Message</Button>
               </GridItem>
             </GridContainer>
           </form>

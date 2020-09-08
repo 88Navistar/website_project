@@ -324,6 +324,16 @@ const defaultBoxShadow = {
   transition: "all 150ms ease 0s"
 };
 
+const featureTitle = {
+  color: grayColor[1],
+  textDecoration: "none",
+  fontWeight: "400",
+  marginTop: "30px",
+  marginBottom: "25px",
+  minHeight: "32px",
+  fontFamily: `"Righteous", "Times New Roman", serif`
+};
+
 const title = {
   color: grayColor[1],
   textDecoration: "none",
@@ -331,7 +341,7 @@ const title = {
   marginTop: "30px",
   marginBottom: "25px",
   minHeight: "32px",
-  fontFamily: `"Roboto Slab", "Times New Roman", serif`
+  fontFamily: `"Righteous", "Times New Roman", serif`
 };
 
 const cardTitle = {
@@ -493,5 +503,6 @@ export {
   mrAuto,
   btnLink,
   coloredShadow,
+  featureTitle,
   hexToRgb,
 };

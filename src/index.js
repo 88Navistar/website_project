@@ -31,13 +31,14 @@ import ShoppingCartPage from "views/ShoppingCartPage/ShoppingCartPage.js";
 import SignupPage from "views/SignupPage/SignupPage.js";
 import GalleryPage from "views/GalleryPage/GalleryIndex.js";
 import DashboardPage from "views/DashboardPage/DashboardPage.js";
-
+import CommissionPage from "views/CommissionPage/CommissionPage.js";
 const hist = createBrowserHistory();
 
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/about-us" component={AboutUsPage} />
+      <Route path="/commission-page" component={CommissionPage} />
       <Route path="/contact-us" component={ContactUsPage} />
       <Route path="/dashboard-page" component={DashboardPage} />
       <Route path="/ecommerce-page" component={EcommercePage} />
@@ -48,6 +49,7 @@ ReactDOM.render(
       <Route path="/product-page" component={ProductPage} />
       <Route path="/shopping-cart-page" component={ShoppingCartPage} />
       <Route path="/signup-page" component={SignupPage} />
+      <Route path="/" component={LandingPage} />
     </Switch>
   </Router>,
   document.getElementById("root")

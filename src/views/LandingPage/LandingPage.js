@@ -5,8 +5,6 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
 // core components
@@ -22,12 +20,10 @@ import landingPageStyle from "assets/jss/material-kit-pro-react/views/landingPag
 
 // Sections for this page
 //import SectionProduct from "./Sections/SectionProduct.js";
-import SectionTeam from "./Sections/SectionTeam.js";
 import SectionWork from "./Sections/SectionWork.js";
 import SimpleReactLightbox from "simple-react-lightbox";
 import SectionGrid from "./Sections/SectionGrid";
-import SectionProduct from "./Sections/SectionProduct.js";
-import SectionProduct1 from "./Sections/SectionProduct1.js";
+//import SectionProduct1 from "./Sections/SectionProduct1.js";
 import SectionBio from "./Sections/SectionBio.js";
 import SectionArt from "./Sections/SectionArt.js";
 
@@ -64,10 +60,9 @@ export default function LandingPage({ ...rest }) {
               <Button
                 color="danger"
                 size="lg"
-                href=""
-                target="_blank"
+                href="/commission-page"
               >
-                Go Somewhere
+                Commissioned Art
               </Button>
             </GridItem>
           </GridContainer>
@@ -80,9 +75,6 @@ export default function LandingPage({ ...rest }) {
           <SectionGrid />
         </SimpleReactLightbox>
         <SectionArt />
-        <SectionProduct1/>
-          <SectionProduct/>
-          <SectionTeam />
           <SectionWork />
         </div>
       </div>

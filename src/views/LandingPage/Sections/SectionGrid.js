@@ -37,7 +37,7 @@ export default function SectionGrid() {
           </SRLWrapper>
         </GridContainer>
         <p>Click the button to see the full view gallery</p>
-        <Button color="default" href="/gallery-page">
+        <Button color="tumblr" href="/gallery-page">
           Gallery
         </Button>
       </Paper>

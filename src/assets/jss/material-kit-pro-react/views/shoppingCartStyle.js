@@ -119,6 +119,10 @@ const styles = {
   },
   textRight: {
     textAlign: "right"
+  },
+  parallax: {
+    height: "380px",
+    backgroundPosition: "top center"
   }
 };
 

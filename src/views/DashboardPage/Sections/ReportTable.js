@@ -8,6 +8,7 @@ export default function ReportTable() {
       {
         id: "",
         name: "",
+        description: "",
         thumbnail_url: "",
         year: "",
         price: "",
@@ -83,11 +84,7 @@ export default function ReportTable() {
                   const data = [...entries.data];
                   data.splice(data.indexOf(oldData), 1);
                   axios
-                    .delete("http://localhost:8001/api/paintings", {
-                      params: {
-                        id: entries.data[0].id,
-                      },
-                    })
+                    .delete(`http://localhost:8001/api/paintings/${oldData.id}`)
                     .then((res) => console.log(res.data));
                   setEntries({ ...entries, data });
                 }, 600);
