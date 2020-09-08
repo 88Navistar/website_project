@@ -20,6 +20,7 @@ import Parallax from "components/Parallax/Parallax.js";
 import Button from "components/CustomButtons/Button.js";
 import profilePageStyle from "assets/jss/material-kit-pro-react/views/profilePageStyle.js";
 import CommissionBody from "./Sections/CommissionBody";
+import SectionWork from "views/LandingPage/Sections/SectionWork";
 
 const useStyles = makeStyles(profilePageStyle);
 
@@ -53,6 +54,8 @@ export default function ProfilePage({ ...rest }) {
         className={classes.parallax}
       />
       <CommissionBody />
-    </div>    
+      <SectionWork /> 
+    </div>
+     
   );
 }
