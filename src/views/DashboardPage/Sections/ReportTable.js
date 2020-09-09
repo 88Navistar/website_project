@@ -68,7 +68,10 @@ export default function ReportTable() {
                   data[data.indexOf(oldData)] = newData;
                   console.log("newData", newData);
                   axios
-                    .put(`http://localhost:8001/api/paintings/${newData.id}`)
+                    .put(
+                      `http://localhost:8001/api/paintings/${newData.id}`,
+                      newData
+                    )
                     .then((res) => console.log(res.data));
                   setEntries({ ...entries, data });
                 }, 600);
@@ -85,6 +88,20 @@ export default function ReportTable() {
                   setEntries({ ...entries, data });
                 }, 600);
               }),
+              onRowAdd: (newData) =>
+              new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  resolve();
+                  const data = [...entries.data];
+                  data.push(newData);
+                  axios
+                    .post(`http://localhost:8001/api/paintings`, data)
+                    .then((res) => console.log(res.data));
+                    setEntries({ ...entries, data });
+                    /* setData([...data, newData]); */
+
+                }, 1000);
+            }),
           }}
         />
       </div>
