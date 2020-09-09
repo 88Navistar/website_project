@@ -10,8 +10,8 @@ export default function ReportTable() {
         name: "",
         description: "",
         thumbnail_url: "",
-        year: "",
-        price: "",
+        year: 2016,
+        price: 600,
         category: "",
       },
     ],
@@ -88,20 +88,20 @@ export default function ReportTable() {
                   setEntries({ ...entries, data });
                 }, 600);
               }),
-              onRowAdd: (newData) =>
+            onRowAdd: (newData) =>
               new Promise((resolve, reject) => {
                 setTimeout(() => {
                   resolve();
                   const data = [...entries.data];
                   data.push(newData);
+                  console.log("objectFrontEnd", newData);
                   axios
-                    .post(`http://localhost:8001/api/paintings`, data)
+                    .post(`http://localhost:8001/api/paintings`, newData)
                     .then((res) => console.log(res.data));
-                    setEntries({ ...entries, data });
-                    /* setData([...data, newData]); */
-
+                  setEntries({ ...entries, data });
+                  /* setData([...data, newData]); */
                 }, 1000);
-            }),
+              }),
           }}
         />
       </div>

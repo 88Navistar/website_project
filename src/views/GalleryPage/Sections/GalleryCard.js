@@ -41,7 +41,7 @@ export default function GalleryCard(props) {
           <CardFooter plain style={{ justifyContent: "space-around" }}>
             <h4>{props.description}</h4>
             <p>
-              <medium className={classes.textMuted}>Fine Art</medium>
+              <small className={classes.textMuted}>Fine Art</small>
             </p>
             <div className={classes.priceContainer}>
               <span className={classes.cardTitle}>${props.price}</span>
