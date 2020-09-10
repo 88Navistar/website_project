@@ -5,6 +5,8 @@ import productStyle from "assets/jss/material-kit-pro-react/views/landingPageSec
 import { Paper } from "@material-ui/core";
 import Card from "components/Card/Card.js";
 import alaskaPano from "assets/img/alaskaPano.jpg";
+import alaskapano from "assets/img/alaska_pano.jpg";
+import prussPic from "assets/img/prussPic.jpg";
 
 const style = {
   ...productStyle,
@@ -19,10 +21,11 @@ export default function CommissionBody() {
   const classes = useStyles();
   return (
     <>
-      <div className={classes.section}>
-        <h2 className={classes.title}>Commissioned Art</h2>
-        <Paper elevation={0}>
-          <p>
+      <div className={classes.section} style={{ backgroundColor: "aliceBlue" }}>
+      <Paper elevation={1}>
+        <h1 className={classes.title}>Commissioned Art</h1>
+        
+          <p style={{ padding: "20px" }}>
             I am a Canadian landscape artist who is offering my fine art
             services to anyone looking for beautiful works of art for their home
             or work space.These acrylic paintings on stretched canvas are
@@ -34,8 +37,10 @@ export default function CommissionBody() {
             the piece. If you are looking for a certain size or idea, feel free
             to contact me. I can work from a photograph or a proposal you may
             have.
+            <br />
           </p>
         </Paper>
+        <h2 className={classes.title}> Commissioned Art By Photo Reference</h2>
         <Card>
           <img
             style={{ height: "100%", width: "100%", display: "block" }}
@@ -44,12 +49,24 @@ export default function CommissionBody() {
             alt="Card-img-cap"
           />
           <h4>Cooper Landing - Kenai Penisula - 2019</h4>
+          <img
+            style={{ height: "100%", width: "75%", display: "block", alignSelf: "center" }}
+            className={classes.imgCardTop}
+            src={alaskapano}
+            alt="Card-img-cap"
+          />
+          <h4>reference photo</h4>
         </Card>
-        <Paper>
-          <p>
-            The commission above used a photo for a reference and was given to Alaskan Hosts as a gift for their Hospitality.
-          </p>
-        </Paper>
+        <h2 className={classes.title}> Commissioned Art By Area Reference</h2>
+        <Card>
+          <img
+            style={{ height: "100%", width: "100%", display: "block" }}
+            className={classes.imgCardTop}
+            src={prussPic}
+            alt="Card-img-cap"
+          />
+          <h4>Red Deer McKenzie Park</h4>
+          </Card>
       </div>
     </>
   );
