@@ -9,6 +9,7 @@ export default function ReportTable() {
         id: "",
         name: "",
         description: "",
+        // eslint-disable-next-line camelcase
         thumbnail_url: "",
         year: 2016,
         price: 600,
