@@ -1,5 +1,4 @@
 import React from "react";
-import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 import productStyle from "assets/jss/material-kit-pro-react/views/landingPageSections/productStyle.js";
 import { Paper } from "@material-ui/core";
