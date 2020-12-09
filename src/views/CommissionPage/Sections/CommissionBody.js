@@ -21,9 +21,9 @@ export default function CommissionBody() {
   return (
     <>
       <div className={classes.section} style={{ backgroundColor: "aliceBlue" }}>
-      <Paper elevation={1}>
-        <h1 className={classes.title}>Commissioned Art</h1>
-        
+        <Paper elevation={1}>
+          <h1 className={classes.title}>Commissioned Art</h1>
+
           <p style={{ padding: "20px" }}>
             I am a Canadian landscape artist who is offering my fine art
             services to anyone looking for beautiful works of art for their home
@@ -65,7 +65,7 @@ export default function CommissionBody() {
             alt="Card-img-cap"
           />
           <h4>Red Deer McKenzie Park</h4>
-          </Card>
+        </Card>
       </div>
     </>
   );

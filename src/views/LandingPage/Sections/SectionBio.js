@@ -50,7 +50,7 @@ export default function SectionBio() {
                   author=" David Massey - Canadian Landscape Artist"
                 />
                 <p>
-                  David and his 5 year old German Shepard need the Ram River
+                  David and his 5 year old German Shepard near the Ram River
                 </p>
               </Card>
             </GridItem>
