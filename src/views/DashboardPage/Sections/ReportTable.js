@@ -2,6 +2,8 @@ import MaterialTable from "material-table";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+const { REACT_APP_BASEURL } = process.env;
+
 export default function ReportTable() {
   const [entries, setEntries] = useState({
     data: [
@@ -31,7 +33,7 @@ export default function ReportTable() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8001/api/paintings")
+      .get(`${REACT_APP_BASEURL}api/paintings`)
       .then((response) => {
         let data = [];
         Object.values(response.data).forEach((el) => {
@@ -70,7 +72,7 @@ export default function ReportTable() {
                   console.log("newData", newData);
                   axios
                     .put(
-                      `http://localhost:8001/api/paintings/${newData.id}`,
+                      `${REACT_APP_BASEURL}api/paintings/${newData.id}`,
                       newData
                     )
                     .then((res) => console.log(res.data));
@@ -84,7 +86,7 @@ export default function ReportTable() {
                   const data = [...entries.data];
                   data.splice(data.indexOf(oldData), 1);
                   axios
-                    .delete(`http://localhost:8001/api/paintings/${oldData.id}`)
+                    .delete(`${REACT_APP_BASEURL}api/paintings/${oldData.id}`)
                     .then((res) => console.log(res.data));
                   setEntries({ ...entries, data });
                 }, 600);
@@ -97,7 +99,7 @@ export default function ReportTable() {
                   data.push(newData);
                   console.log("objectFrontEnd", newData);
                   axios
-                    .post(`http://localhost:8001/api/paintings`, newData)
+                    .post(`${REACT_APP_BASEURL}api/paintings`, newData)
                     .then((res) => console.log(res.data));
                   setEntries({ ...entries, data });
                   /* setData([...data, newData]); */
