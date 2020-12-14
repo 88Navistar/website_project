@@ -13,7 +13,7 @@ export default function ReportTable() {
         description: "",
         // eslint-disable-next-line camelcase
         thumbnail_url: "",
-        year: 2016,
+        year: 2017,
         price: 600,
         category: "",
       },
