@@ -24,12 +24,13 @@ export default function SectionWork() {
           <h4 className={classes.description}>
             Please use the contact form for any questions or comments.
           </h4>
-          <form>
+          <form name="contact" method="POST" data-netlify="true">
             <GridContainer>
               <GridItem xs={12} sm={6} md={6}>
                 <CustomInput
                   labelText="Your Name"
                   id="name"
+                  name="name"
                   formControlProps={{
                     fullWidth: true,
                   }}
@@ -39,6 +40,7 @@ export default function SectionWork() {
                 <CustomInput
                   labelText="Your Email"
                   id="email"
+                  name="email"
                   formControlProps={{
                     fullWidth: true,
                   }}
@@ -47,6 +49,7 @@ export default function SectionWork() {
               <CustomInput
                 labelText="Your Message"
                 id="message"
+                name="message"
                 formControlProps={{
                   fullWidth: true,
                   className: classes.textArea,
@@ -61,7 +64,14 @@ export default function SectionWork() {
                 className={classes.mrAuto + " " + classes.mlAuto}
                 style={{ textAlign: "center" }}
               >
-                <Button color="tumblr">Send Message</Button>
+                <div data-netlify-recaptcha="true"></div>
+              </GridItem>
+              <GridItem
+                xs={12}
+                className={classes.mrAuto + " " + classes.mlAuto}
+                style={{ textAlign: "center" }}
+              >
+                <Button type="submit" color="tumblr">Send Message</Button>
               </GridItem>
             </GridContainer>
           </form>

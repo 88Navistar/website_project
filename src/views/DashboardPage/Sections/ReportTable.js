@@ -14,7 +14,7 @@ export default function ReportTable() {
         // eslint-disable-next-line camelcase
         thumbnail_url: "",
         year: 2017,
-        price: 600,
+        price: "",
         category: "",
       },
     ],
