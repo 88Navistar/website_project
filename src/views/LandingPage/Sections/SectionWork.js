@@ -24,7 +24,13 @@ export default function SectionWork() {
           <h4 className={classes.description}>
             Please use the contact form for any questions or comments.
           </h4>
-          <form name="contact" method="POST" data-netlify="true">
+          <form
+            name="contact"
+            netlify
+            method="post"
+            enctype="multipart/form-data"
+            action="/thank-you/"
+          >
             <GridContainer>
               <input type="hidden" name="form-name" value="contact" />
               <GridItem xs={12} sm={6} md={6}>
