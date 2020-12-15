@@ -26,7 +26,7 @@ export default function SectionWork() {
           </h4>
           <form name="contact" method="POST" data-netlify="true">
             <GridContainer>
-            <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="form-name" value="contact" />
               <GridItem xs={12} sm={6} md={6}>
                 <CustomInput
                   labelText="Your Name"
@@ -72,12 +72,43 @@ export default function SectionWork() {
                 className={classes.mrAuto + " " + classes.mlAuto}
                 style={{ textAlign: "center" }}
               >
-                <Button type="submit" color="tumblr">Send Message</Button>
+                <Button type="submit" color="tumblr">
+                  Send Message
+                </Button>
               </GridItem>
             </GridContainer>
           </form>
         </GridItem>
       </GridContainer>
+      <form name="contactone" method="POST" data-netlify="true">
+        <p>
+          <label>
+            Your Name: <input type="text" name="name" />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Email: <input type="email" name="email" />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Role:{" "}
+            <select name="role[]" multiple>
+              <option value="leader">Leader</option>
+              <option value="follower">Follower</option>
+            </select>
+          </label>
+        </p>
+        <p>
+          <label>
+            Message: <textarea name="message"></textarea>
+          </label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
     </div>
   );
 }
