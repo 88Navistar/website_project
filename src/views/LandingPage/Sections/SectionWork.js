@@ -32,6 +32,7 @@ export default function SectionWork() {
                   labelText="Your Name"
                   id="name"
                   name="name"
+                  type="text"
                   formControlProps={{
                     fullWidth: true,
                   }}
@@ -42,6 +43,7 @@ export default function SectionWork() {
                   labelText="Your Email"
                   id="email"
                   name="email"
+                  type="text"
                   formControlProps={{
                     fullWidth: true,
                   }}
@@ -51,6 +53,7 @@ export default function SectionWork() {
                 labelText="Your Message"
                 id="message"
                 name="message"
+                type="text"
                 formControlProps={{
                   fullWidth: true,
                   className: classes.textArea,
