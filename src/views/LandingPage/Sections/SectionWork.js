@@ -26,6 +26,7 @@ export default function SectionWork() {
           </h4>
           <form name="contact" method="POST" data-netlify="true">
             <GridContainer>
+            <input type="hidden" name="form-name" value="contact" />
               <GridItem xs={12} sm={6} md={6}>
                 <CustomInput
                   labelText="Your Name"
