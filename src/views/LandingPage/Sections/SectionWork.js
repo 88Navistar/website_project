@@ -89,6 +89,7 @@ export default function SectionWork() {
         className="contact-form"
       >
         <p className="screen-reader-text">
+        <input type="hidden" name="form-name" value="contactForm" />
           <label>
             Don't fill this out if you're human: <input name="bot-field" />
           </label>
