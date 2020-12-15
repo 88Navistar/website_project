@@ -80,33 +80,57 @@ export default function SectionWork() {
           </form>
         </GridItem>
       </GridContainer>
-      <form name="contactone" method="POST" data-netlify="true">
-        <p>
+      <form
+        name="contactForm"
+        method="POST"
+        data-netlify-honeypot="bot-field"
+        data-netlify="true"
+        id="contact-form"
+        className="contact-form"
+      >
+        <p className="screen-reader-text">
           <label>
-            Your Name: <input type="text" name="name" />
+            Don't fill this out if you're human: <input name="bot-field" />
           </label>
         </p>
-        <p>
-          <label>
-            Your Email: <input type="email" name="email" />
+        <p className="form-row">
+          <label htmlFor="contact-form-name" className="form-label">
+            Name
           </label>
+          <input
+            type="text"
+            name="name"
+            id="contact-form-name"
+            className="form-input"
+          />
         </p>
-        <p>
-          <label>
-            Your Role:{" "}
-            <select name="role[]" multiple>
-              <option value="leader">Leader</option>
-              <option value="follower">Follower</option>
-            </select>
+        <p className="form-row">
+          <label htmlFor="contant-form-email" className="form-label">
+            Email address
           </label>
+          <input
+            type="email"
+            name="email"
+            id="contant-form-email"
+            className="form-input"
+          />
         </p>
-        <p>
-          <label>
-            Message: <textarea name="message"></textarea>
+        <p className="form-row">
+          <label htmlFor="contant-form-message" className="form-label">
+            Message
           </label>
+          <textarea
+            name="message"
+            id="contant-form-message"
+            className="form-textarea"
+            rows="7"
+          />
         </p>
-        <p>
-          <button type="submit">Send</button>
+        <input type="hidden" name="form-name" value="contactForm" />
+        <p className="form-row form-submit">
+          <button type="submit" className="button">
+            Send Message
+          </button>
         </p>
       </form>
     </div>
