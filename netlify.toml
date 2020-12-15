@@ -14,4 +14,5 @@
   command = "npm run build"
 
 [build.environment]
-  REACT_APP_BASE_URL = "https://artshop-api.herokuapp.com/"
+  REACT_APP_BASEURL = "https://artshop-api.herokuapp.com/"
+
