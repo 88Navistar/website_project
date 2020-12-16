@@ -28,7 +28,7 @@ export default function SectionWork() {
             name="contact"
             netlify
             method="post"
-            enctype="multipart/form-data"
+            encType="multipart/form-data"
             action="/thank-you/"
           >
             <GridContainer>
@@ -88,6 +88,22 @@ export default function SectionWork() {
             </GridContainer>
           </form>
         </GridItem>
+        <div>
+          <form
+            name="contact-two"
+            netlify
+            method="post"
+            encType="multipart/form-data"
+            action="/thank-you/"
+          >
+            <input type="hidden" name="form-name" value="contact-two" />
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+            <textarea name="message"></textarea>
+            <input type="file" id="file" name="file" multiple />
+            <button type="submit">submit</button>
+          </form>
+        </div>
       </GridContainer>
     </div>
   );
