@@ -7,7 +7,7 @@ import React from "react";
 function Footer() {
   return (
     <div>
-      <h4> Someday Soon this will be a World Class Footer</h4>
+      <h4> ©David L Massey Art 2020</h4>
     </div>
   )
 }

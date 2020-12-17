@@ -23,7 +23,7 @@ import dave from "assets/img/faces/dave.jpg";
 
 import profilePageStyle from "assets/jss/material-kit-pro-react/views/profilePageStyle.js";
 import Quote from "components/Typography/Quote";
-import SectionWork from "views/LandingPage/Sections/SectionWork";
+import Form2 from "components/Form/Form2";
 
 const useStyles = makeStyles(profilePageStyle);
 
@@ -121,7 +121,7 @@ It's these memories that inspire me to create. Life itself is beautiful. I feel 
           </div>
         </div>
       </div>
-      <SectionWork />
+      <Form2 />
       <Footer />
     </div>
   );

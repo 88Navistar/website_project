@@ -19,13 +19,13 @@ import Parallax from "components/Parallax/Parallax.js";
 import landingPageStyle from "assets/jss/material-kit-pro-react/views/landingPageStyle.js";
 
 // Sections for this page
-//import SectionProduct from "./Sections/SectionProduct.js";
-import SectionWork from "./Sections/SectionWork.js";
 import SimpleReactLightbox from "simple-react-lightbox";
 import SectionGrid from "./Sections/SectionGrid";
 //import SectionProduct1 from "./Sections/SectionProduct1.js";
 import SectionBio from "./Sections/SectionBio.js";
 import SectionArt from "./Sections/SectionArt.js";
+//import Form from "components/Form/Form.js";
+import Form2 from "components/Form/Form2.js";
 
 const useStyles = makeStyles(landingPageStyle);
 
@@ -75,7 +75,7 @@ export default function LandingPage({ ...rest }) {
           <SectionGrid />
         </SimpleReactLightbox>
         <SectionArt />
-          <SectionWork />
+        <Form2 />
         </div>
       </div>
      <Footer />
