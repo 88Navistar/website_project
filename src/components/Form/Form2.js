@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer.js";
@@ -58,39 +58,38 @@ export default function Form2() {
               <Form id="fs-frm" noValidate>
                 <GridContainer>
                   <GridItem xs={12} sm={6} md={6}>
-                    <label htmlFor="name">Name:</label>
                     <Field
                       component={TextField}
+                      label="Name"
                       id="name"
-                      type="name"
+                      type="input"
                       name="name"
-                    />
-
-                    <ErrorMessage
-                      name="name"
-                      className="errorMsg"
-                      component="p"
                     />
                   </GridItem>
 
                   <GridItem xs={12} sm={6} md={6}>
-                    <label htmlFor="email">Email:</label>
-                    <Field component={TextField} id="email" type="email" name="email" />
-                    <ErrorMessage
+                    <Field
+                      component={TextField}
+                      id="email"
+                      type="email"
                       name="email"
-                      className="errorMsg"
-                      component="p"
+                      label="Email"
                     />
                   </GridItem>
 
-                  <label htmlFor="message">Message:</label>
-                  <Field component={TextField} id="message" name="message" formControlProps={{
-                    fullWidth: true,
-                  }}/>
-                  <ErrorMessage
+                  <Field
+                    component={TextField}
                     name="message"
-                    className="errorMsg"
-                    component="p"
+                    id="standard-full-width"
+                    label="Message"
+                    style={{ margin: 8 }}
+                    placeholder="Type you message here"
+                    // helperText="Full width!"
+                    fullWidth
+                    margin="normal"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
                   />
 
                   <GridItem
