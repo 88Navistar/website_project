@@ -6,8 +6,8 @@ import React from "react";
 
 function Footer() {
   return (
-    <div>
-      <h4> ©David L Massey Art 2020</h4>
+    <div justify="center">
+      <h4> © David L Massey Art 2020</h4>
     </div>
   )
 }

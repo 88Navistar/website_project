@@ -27,7 +27,7 @@ export default function CommissionBody() {
           <p style={{ padding: "20px" }}>
             I am a Canadian landscape artist who is offering my fine art
             services to anyone looking for beautiful works of art for their home
-            or work space.These acrylic paintings on stretched canvas are
+            or work space. These acrylic paintings on stretched canvas are
             colourful and detailed works that are perfect for anyone looking to
             beautify their home interiors. My paintings are generally between
             16”x20” to 48”x60” (or larger), and can be commissioned for
@@ -54,7 +54,7 @@ export default function CommissionBody() {
             src={alaskapano}
             alt="Card-img-cap"
           />
-          <h4>reference photo</h4>
+          <h4>Reference Photo</h4>
         </Card>
         <h2 className={classes.title}> Commissioned Art By Area Reference</h2>
         <Card>

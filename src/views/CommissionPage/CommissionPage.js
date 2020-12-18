@@ -54,7 +54,8 @@ export default function ProfilePage({ ...rest }) {
         className={classes.parallax}
       />
       <CommissionBody />
-      <Form2 /> 
+      <Form2 />
+      <Footer />
     </div>
      
   );

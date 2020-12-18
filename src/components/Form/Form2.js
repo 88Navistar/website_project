@@ -11,6 +11,7 @@ import Button from "components/CustomButtons/Button.js";
 import { TextField } from "formik-material-ui";
 
 const useStyles = makeStyles(workStyle);
+// const { YOUR_FORM_ID } = process.env;
 
 const formSchema = Yup.object().shape({
   name: Yup.string().required(),
@@ -44,7 +45,7 @@ export default function Form2() {
   return (
     <div>
       <GridContainer justify="center">
-        <GridItem cs={12} sm={8} md={8}>
+        <GridItem xs={12} sm={8} md={8}>
           <h2 className={classes.title}>Contact David</h2>
           <h4 className={classes.description}>
             Please use the contact form for any questions or comments.
@@ -81,7 +82,6 @@ export default function Form2() {
                     component={TextField}
                     name="message"
                     id="standard-full-width"
-                    label="Message"
                     style={{ margin: 8 }}
                     placeholder="Type you message here"
                     // helperText="Full width!"
