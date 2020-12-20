@@ -12,7 +12,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
-import { Router, Route, Switch } from "react-router";
+import { Router, Route, Switch, Redirect } from "react-router";
 
 // pages for this product
 import ContactUsPage from "views/ContactUsPage/ContactUsPage.js";
@@ -25,12 +25,35 @@ import DashboardPage from "views/DashboardPage/DashboardPage.js";
 import CommissionPage from "views/CommissionPage/CommissionPage.js";
 const hist = createBrowserHistory();
 
+const fakeAuth = {
+  isAuthenticated: false,
+  signin(cb) {
+    fakeAuth.isAuthenticated = true;
+    setTimeout(cb, 100); // fake async
+  },
+  signout(cb) {
+    fakeAuth.isAuthenticated = false;
+    setTimeout(cb, 100);
+  }
+};
+
+const PrivateRoute = ({ children, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={() => {
+        return fakeAuth.isAuthenticated === true ? children : <Redirect to="/login-page" />
+    }}
+    />
+  );
+};
+
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route exact path="/commission-page" component={CommissionPage} />
       <Route exact path="/contact-us" component={ContactUsPage} />
-      <Route exact path="/dashboard-page" component={DashboardPage} />
+      <PrivateRoute exact path="/dashboard-page" component={DashboardPage} />
       <Route exact path="/gallery-page" component={GalleryPage} />
       <Route exact path="/landing-page" component={LandingPage} />
       <Route exact path="/login-page" component={LoginPage} />
