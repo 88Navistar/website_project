@@ -32,7 +32,7 @@ import CommissionPage from "views/CommissionPage/CommissionPage.js";
 const hist = createBrowserHistory();
 
 const fakeAuth = {
-  isAuthenticated: false,
+  isAuthenticated: true,
   signin(cb) {
     fakeAuth.isAuthenticated = true;
     setTimeout(cb, 100); // fake async
@@ -40,16 +40,20 @@ const fakeAuth = {
   signout(cb) {
     fakeAuth.isAuthenticated = false;
     setTimeout(cb, 100);
-  }
+  },
 };
 
-const PrivateRoute = ({ children, ...rest }) => {
+const PrivateRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={() => {
-        return fakeAuth.isAuthenticated === true ? children : <Redirect to="/login-page" />
-    }}
+      render={(props) => {
+        if (fakeAuth.isAuthenticated) {
+          return <Component {...rest} {...props} />;
+        } else {
+          return <Redirect to={{ pathname: "./login-page" }} />;
+        }
+      }}
     />
   );
 };
