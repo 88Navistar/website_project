@@ -12,7 +12,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
-import { Router, Route, Switch, Redirect } from "react-router";
+//import { Router, Route, Switch, Redirect } from "react-router";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 
 // pages for this product
 import ContactUsPage from "views/ContactUsPage/ContactUsPage.js";
