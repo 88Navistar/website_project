@@ -9,7 +9,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom";
 //import { createBrowserHistory } from "history";
 //import { Router, Route, Switch, Redirect } from "react-router";
@@ -19,7 +19,8 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import AuthProvider from "./provider/AuthProvider";
+import AuthProvider from "./provider/Auth";
+import { AuthContext } from "./provider/Auth";
 //import { firebaseAuth } from "./provider/AuthProvider";
 
 // pages for this product
@@ -32,24 +33,25 @@ import GalleryPage from "views/GalleryPage/GalleryIndex.js";
 import DashboardPage from "views/DashboardPage/DashboardPage.js";
 import CommissionPage from "views/CommissionPage/CommissionPage.js";
 
-const fakeAuth = {
-  isAuthenticated: true,
-  signin(cb) {
-    fakeAuth.isAuthenticated = true;
-    setTimeout(cb, 100); // fake async
-  },
-  signout(cb) {
-    fakeAuth.isAuthenticated = false;
-    setTimeout(cb, 100);
-  },
-};
+// const fakeAuth = {
+//   isAuthenticated: true,
+//   signin(cb) {
+//     fakeAuth.isAuthenticated = true;
+//     setTimeout(cb, 100); // fake async
+//   },
+//   signout(cb) {
+//     fakeAuth.isAuthenticated = false;
+//     setTimeout(cb, 100);
+//   },
+// };
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
+  const { currentUser } = useContext(AuthContext);
   return (
     <Route
       {...rest}
       render={(props) => {
-        if (fakeAuth.isAuthenticated) {
+        if (!!currentUser) {
           return <Component {...rest} {...props} />;
         } else {
           return <Redirect to={{ pathname: "./login-page" }} />;
@@ -60,8 +62,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 };
 
 ReactDOM.render(
-  <Router>
-    <AuthProvider>
+  <AuthProvider>
+    <Router>
       <Switch>
         <Route exact path="/commission-page" component={CommissionPage} />
         <Route exact path="/contact-us" component={ContactUsPage} />
@@ -72,8 +74,8 @@ ReactDOM.render(
         <Route exact path="/profile-page" component={ProfilePage} />
         <Route exact path="/signup-page" component={SignupPage} />
         <Route exact path="/" component={LandingPage} />
-     </Switch>
-    </AuthProvider>
-  </Router>,
+      </Switch>
+    </Router>
+  </AuthProvider>,
   document.getElementById("root")
 );
