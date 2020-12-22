@@ -9,9 +9,9 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React, { useContext } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import { createBrowserHistory } from "history";
+//import { createBrowserHistory } from "history";
 //import { Router, Route, Switch, Redirect } from "react-router";
 import {
   BrowserRouter as Router,
@@ -20,7 +20,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import AuthProvider from "./provider/AuthProvider";
-import { firebaseAuth } from "./provider/AuthProvider";
+//import { firebaseAuth } from "./provider/AuthProvider";
 
 // pages for this product
 import ContactUsPage from "views/ContactUsPage/ContactUsPage.js";
@@ -31,7 +31,6 @@ import SignupPage from "views/SignupPage/SignupPage.js";
 import GalleryPage from "views/GalleryPage/GalleryIndex.js";
 import DashboardPage from "views/DashboardPage/DashboardPage.js";
 import CommissionPage from "views/CommissionPage/CommissionPage.js";
-const hist = createBrowserHistory();
 
 const fakeAuth = {
   isAuthenticated: true,
@@ -61,7 +60,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 };
 
 ReactDOM.render(
-  <Router history={hist}>
+  <Router>
     <AuthProvider>
       <Switch>
         <Route exact path="/commission-page" component={CommissionPage} />
