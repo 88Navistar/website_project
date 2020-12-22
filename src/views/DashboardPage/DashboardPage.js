@@ -5,6 +5,7 @@ import PersistentDrawerLeft from "components/SideBar/PersistentDrawerLeft";
 //import MaterialTable from "views/DashboardPage/Sections/MaterialTable.js";
 import ReportTable from "./Sections/ReportTable";
 //import Table from "views/DashboardPage/Sections/Table";
+import LogOut from "../LoginPage/LogOut";
 
 export default function DashboardPage() {
   return (
@@ -13,6 +14,9 @@ export default function DashboardPage() {
         <PersistentDrawerLeft />
         <ReportTable />
         {/* <TableList /> */}
+      </div>
+      <div>
+        <LogOut />
       </div>
     </>
   );

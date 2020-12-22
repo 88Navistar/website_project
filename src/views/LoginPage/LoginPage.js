@@ -22,7 +22,7 @@ import image from "assets/img/bg7.jpg";
 
 const useStyles = makeStyles(loginPageStyle);
 
-const LoginPage = (history) => {
+const LoginPage = ({history}) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
