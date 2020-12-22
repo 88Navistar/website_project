@@ -62,15 +62,8 @@ export default function GalleryCard(props) {
             <Button
               round
               color="info"
-              onClick={() =>
-                //<button onClick={() => handleButtonClick(item)}>Log me</button>
-                //add handleButtonClick function above
-                // window.dispatchEvent("addItemToCart", props.item)
-                // eslint-disable-next-line react/prop-types
-                console.log(props.id, props.thumbnail_url, props.price)
-              }
             >
-              Add to Cart &nbsp;
+              {props.category}
             </Button>
           </CardFooter>
         </Card>

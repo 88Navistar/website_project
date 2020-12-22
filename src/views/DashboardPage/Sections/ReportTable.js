@@ -20,7 +20,7 @@ export default function ReportTable() {
     ],
   });
 
-  const [state] = React.useState({
+  const [state] = useState({
     columns: [
       { title: "Name", field: "name" },
       { title: "Description", field: "description" },

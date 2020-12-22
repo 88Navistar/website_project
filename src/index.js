@@ -9,7 +9,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 //import { Router, Route, Switch, Redirect } from "react-router";
@@ -19,6 +19,8 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+import AuthProvider from "./provider/AuthProvider";
+import { firebaseAuth } from "./provider/AuthProvider";
 
 // pages for this product
 import ContactUsPage from "views/ContactUsPage/ContactUsPage.js";
@@ -60,17 +62,19 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 
 ReactDOM.render(
   <Router history={hist}>
-    <Switch>
-      <Route exact path="/commission-page" component={CommissionPage} />
-      <Route exact path="/contact-us" component={ContactUsPage} />
-      <PrivateRoute exact path="/dashboard-page" component={DashboardPage} />
-      <Route exact path="/gallery-page" component={GalleryPage} />
-      <Route exact path="/landing-page" component={LandingPage} />
-      <Route exact path="/login-page" component={LoginPage} />
-      <Route exact path="/profile-page" component={ProfilePage} />
-      <Route exact path="/signup-page" component={SignupPage} />
-      <Route exact path="/" component={LandingPage} />
-    </Switch>
+    <AuthProvider>
+      <Switch>
+        <Route exact path="/commission-page" component={CommissionPage} />
+        <Route exact path="/contact-us" component={ContactUsPage} />
+        <PrivateRoute exact path="/dashboard-page" component={DashboardPage} />
+        <Route exact path="/gallery-page" component={GalleryPage} />
+        <Route exact path="/landing-page" component={LandingPage} />
+        <Route exact path="/login-page" component={LoginPage} />
+        <Route exact path="/profile-page" component={ProfilePage} />
+        <Route exact path="/signup-page" component={SignupPage} />
+        <Route exact path="/" component={LandingPage} />
+     </Switch>
+    </AuthProvider>
   </Router>,
   document.getElementById("root")
 );
