@@ -11,7 +11,7 @@ export default function GalleryCards() {
 
   useEffect(() => {
     axios(`${REACT_APP_BASEURL}api/paintings`)
-      .then((result) => setData(Object.values(result.data)))
+      .then((result) => setData(Object.values(result.data).sort().reverse()))
       .catch((err) => console.log(err));
   }, []);
 

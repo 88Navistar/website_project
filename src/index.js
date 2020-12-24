@@ -8,7 +8,6 @@
 =========================================================
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-
 import React, { useContext } from "react";
 import ReactDOM from "react-dom";
 //import { createBrowserHistory } from "history";
@@ -21,7 +20,6 @@ import {
 } from "react-router-dom";
 import AuthProvider from "./provider/Auth";
 import { AuthContext } from "./provider/Auth";
-//import { firebaseAuth } from "./provider/AuthProvider";
 
 // pages for this product
 import ContactUsPage from "views/ContactUsPage/ContactUsPage.js";

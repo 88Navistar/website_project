@@ -58,6 +58,9 @@ export default function ReportTable() {
     <>
       <div style={{ maxWidth: "100%", padding: "20px" }}>
         <MaterialTable
+        options={{
+            exportButton: true,
+          }}
           title="Available Paintings"
           columns={state.columns}
           data={entries.data}
