@@ -19,19 +19,19 @@ export default function SectionGrid() {
           <SRLWrapper>
             <div className="row">
               <div className="column">
-                <img src={require("assets/photos/dma-1.jpg")} alt="picholder" />
-                <img src={require("assets/photos/dma-2.jpg")} alt="picholder" />
+                <img src={require("assets/photos/feature2-.jpg")} alt="picholder" />
+                <img src={require("assets/photos/dma-19.jpg")} alt="picholder" />
+                <img src={require("assets/photos/feature8-.jpg")} alt="picholder" />
+              </div>
+              <div className="column">
+                <img src={require("assets/photos/feature1-.jpg")} alt="picholder" />
+                <img src={require("assets/photos/dma-5.jpg")} alt="picholder" />
                 <img src={require("assets/photos/dma-3.jpg")} alt="picholder" />
               </div>
               <div className="column">
-                <img src={require("assets/photos/dma-4.jpg")} alt="picholder" />
-                <img src={require("assets/photos/dma-5.jpg")} alt="picholder" />
-                <img src={require("assets/photos/dma-6.jpg")} alt="picholder" />
-              </div>
-              <div className="column">
-                <img src={require("assets/photos/dma-7.jpg")} alt="picholder" />
-                <img src={require("assets/photos/dma-8.jpg")} alt="picholder" />
-                <img src={require("assets/photos/dma-9.jpg")} alt="picholder" />
+                <img src={require("assets/photos/dma-10.jpg")} alt="picholder" />
+                <img src={require("assets/photos/feature4-.jpg")} alt="picholder" />
+                <img src={require("assets/photos/dma-2.jpg")} alt="picholder" />
               </div>
             </div>
           </SRLWrapper>

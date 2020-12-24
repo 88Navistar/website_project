@@ -59,10 +59,7 @@ export default function GalleryCard(props) {
               </Tooltip>
             </div>
 
-            <Button
-              round
-              color="info"
-            >
+            <Button round color="info">
               {props.category}
             </Button>
           </CardFooter>
